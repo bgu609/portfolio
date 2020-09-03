@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcAppDebug", "CalcAppDebug.csproj", "{8FCB6A1E-8415-4EF2-AA98-3F34C2C141B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcAppDebug.test", "..\CalcAppDebug.test\CalcAppDebug.test.csproj", "{08D6A5E5-2C4A-404F-9E6D-024366CE91FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FCB6A1E-8415-4EF2-AA98-3F34C2C141B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FCB6A1E-8415-4EF2-AA98-3F34C2C141B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FCB6A1E-8415-4EF2-AA98-3F34C2C141B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FCB6A1E-8415-4EF2-AA98-3F34C2C141B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D6A5E5-2C4A-404F-9E6D-024366CE91FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D6A5E5-2C4A-404F-9E6D-024366CE91FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D6A5E5-2C4A-404F-9E6D-024366CE91FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D6A5E5-2C4A-404F-9E6D-024366CE91FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A43D5216-58D2-4C96-96E1-044329D3A4B4}
+	EndGlobalSection
+EndGlobal

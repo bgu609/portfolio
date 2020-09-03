@@ -1,0 +1,53 @@
+﻿<Application x:Class="BikeShopApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BikeShopApp"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Button x:Key="PKNU_Button" Content="Hello PKNU"/>
+            
+            <SolidColorBrush x:Key="PKNU_Brush" Color="DarkBlue"/>
+            
+            <sys:Double x:Key="PKNU_Width">1280</sys:Double>
+            <sys:Double x:Key="PKNU_Height">720</sys:Double>
+            
+            <sys:String x:Key="PKNU_Title">PKNU</sys:String>
+            
+            <LinearGradientBrush x:Key="background">
+                <GradientStop Color="Aquamarine" Offset="0"/>
+                <GradientStop Color="BlueViolet" Offset="1"/>
+            </LinearGradientBrush>
+
+            <Style x:Key="niceButton" TargetType="Button">
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush>
+                            <GradientStop Color="Orange" Offset="0"/>
+                            <GradientStop Color="Yellow" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="PKNU_new_Button" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid>
+                                <Rectangle Fill="#BB000000" Margin="5, 5, 0, 0" RadiusX="5" RadiusY="5"/>
+                                <Rectangle Fill="{TemplateBinding Background}" Margin="0, 0, 5, 5" RadiusX="5" RadiusY="5"/>
+                                <Viewbox>
+                                    <ContentPresenter/>
+                                </Viewbox>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

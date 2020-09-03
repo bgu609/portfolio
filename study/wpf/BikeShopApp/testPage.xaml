@@ -1,0 +1,154 @@
+﻿<Page x:Class="BikeShopApp.testPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BikeShopApp"
+      xmlns:bl="clr-namespace:BusinessLogic"
+      xmlns:m="clr-namespace:BikeShopApp.Math"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="testPage">
+
+    <Page.Resources>
+        <m:TwiceConverter x:Key="twiceConv"/>
+    </Page.Resources>
+    <Grid Loaded="Grid_Loaded">
+        <!--<Label>
+            <bl:Car />
+        </Label>-->
+        <!--<Canvas Background="Orange" Margin="10">
+            <Button Canvas.Left="10" Canvas.Top="15" Content="Canvas Button A" />
+            <Button Canvas.Left="-20" Canvas.Bottom="-15" Content="Canvas Button B" />
+            <Button Canvas.Left="400" Canvas.Top="250" Content="Canvas Button C" />
+        </Canvas>-->
+        <!--<StackPanel Background="Orange" Margin="10">
+            <Button Canvas.Left="10" Canvas.Top="15" Content="Canvas Button A" />
+            <Button Canvas.Left="-20" Canvas.Bottom="-15" Content="Canvas Button B" />
+            <Button Canvas.Left="400" Canvas.Top="250" Content="Canvas Button C" />
+        </StackPanel>-->
+        <!--<DockPanel Background="Orange" Margin="10">
+            <Button Content="Canvas Button A" DockPanel.Dock="Left"/>
+            <Button Content="Canvas Button B" DockPanel.Dock="Right"/>
+            <Button Content="Canvas Button C" DockPanel.Dock="Top"/>
+            <Button Content="Canvas Button D" DockPanel.Dock="Bottom"/>
+            <Button Content="Canvas Button E" />
+            <Button Content="Canvas Button F" />
+        </DockPanel>-->
+        <!--<Grid Height="100" Margin="150,175">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Content="Button A" Margin="5"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="Button B" Margin="5"/>
+            <Button Grid.Row="1" Grid.Column="0" Content="Button C" Margin="5" Grid.ColumnSpan="2"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="Button D" Margin="5" Grid.RowSpan="2"/>
+        </Grid>-->
+        <!--<Grid Width="320" Height="200">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <ListBox x:Name="ListBox1" Grid.Column="0" ItemsSource="{Binding}">
+                <ListBox.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <StackPanel>
+                            <TextBlock Text="속도"/>
+                            <TextBox Text="{Binding Speed}"/>
+                            <TextBlock Text="색상"/>
+                            <Border Height="10">
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding Color}"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBox Text="{Binding Color}"/>
+                        </StackPanel>
+                    </ItemContainerTemplate>
+                    --><!--<DataTemplate>
+                        <TextBlock Text="{Binding Speed}"/>
+                        --><!--<Label Content="{Binding Speed, Converter={StaticResource twiceConv}}"/>--><!--
+                    </DataTemplate>--><!--
+                </ListBox.ItemTemplate>
+                --><!--<Label Content="Element 1"/>
+                <Label Content="Element 2"/>
+                <TextBlock Text="Text Elemnet 1"/>
+                <GroupBox Header="Element 3">
+                    With some content it's funnier
+                </GroupBox>--><!--
+            </ListBox>
+            <ComboBox x:Name="ComboBox1" Grid.Column="2" Width="140" Height="100" ItemsSource="{Binding}">
+                <ComboBox.ItemTemplate>
+                    <ItemContainerTemplate>
+                        <StackPanel>
+                            <TextBlock Text="속도"/>
+                            <TextBox Text="{Binding Speed}"/>
+                            <TextBlock Text="색상"/>
+                            <Border Height="10">
+                                <Border.Background>
+                                    <SolidColorBrush Color="{Binding Color}"/>
+                                </Border.Background>
+                            </Border>
+                            <TextBox Text="{Binding Color}"/>
+                        </StackPanel>
+                    </ItemContainerTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </Grid>-->
+        <!--<StackPanel Margin="10">
+            <Slider x:Name="slider" Minimum="0" Maximum="1000" TickFrequency="10" TickPlacement="TopLeft" Value="{Binding Speed}" ValueChanged="slider_ValueChanged"/>
+            <ProgressBar Maximum="{Binding Maximum, ElementName=slider}" Value="{Binding Value, ElementName=slider}" Height="20"/>
+            <TextBlock Text="{Binding Value, ElementName=slider}" TextAlignment="Center"/>
+            <TextBox x:Name="valuearea" Width="100" Text="{Binding Speed, Mode=TwoWay}" FontSize="16" TextAlignment="Center"/>
+            <TextBlock Text="{Binding Speed, Converter={StaticResource twiceConv}}" TextAlignment="Center"/>
+            <TextBlock Text="{Binding Speed}" TextAlignment="Center"/>
+        </StackPanel>-->
+
+        <!--<Grid Width="300" Height="100">
+            <Button Content="Click" FontSize="20" Click="Button_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            --><!--<Ellipse Fill="{TemplateBinding Background}" StrokeThickness="2" Stroke="{TemplateBinding BorderBrush}"/>--><!--
+                            <Rectangle Fill="{TemplateBinding Background}"
+                                       RadiusX="15" RadiusY="15" StrokeThickness="3"
+                                       Stroke="{TemplateBinding BorderBrush}"/>
+                            <Label Content="{TemplateBinding Content}"
+                                   FontSize="{TemplateBinding FontSize}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>-->
+        <!--<Button Margin="5, 5, 10, 5" Content="SEND">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Rectangle Fill="#BB000000" Margin="5, 5, 0, 0" RadiusX="5" RadiusY="5"/>
+                        <Rectangle Fill="{TemplateBinding Background}" Margin="0, 0, 5, 5" RadiusX="5" RadiusY="5"/>
+                        <Viewbox Margin="5, 5, 10, 10">
+                            <ContentPresenter/>
+                        </Viewbox>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>-->
+
+        <StackPanel Width="100" Margin="30">
+            <Button Style="{StaticResource niceButton}" Content="Button A"/>
+            <Button Content="Button B"/>
+            <Button Style="{StaticResource niceButton}" Content="Button C"/>
+            <Button Content="Email Support"
+                Style="{StaticResource PKNU_new_Button}"/>
+        </StackPanel>
+    </Grid>
+</Page>

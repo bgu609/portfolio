@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApp1.ControlWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="ControlWindow" Height="450" Width="800">
+    <Grid>
+        <!--<Border Background="Orange" CornerRadius="20" Padding="5"
+                Width="170" Height="70" Margin="0,10,10,0"
+                HorizontalAlignment="Right" VerticalAlignment="Top">
+            <Button Content="Button" Width="150" Height="50"/>
+        </Border>
+
+        <Button HorizontalAlignment="Right" Margin="0,10,300,0" VerticalAlignment="Top" Width="160" Height="105">
+            <MediaElement Source="cat.wmv" Height="80"/>
+        </Button>
+
+        <Border Background="Aqua" CornerRadius="40, 10, 10, 0"
+                Width="170" Height="70" Margin="0,90,10,0"
+                HorizontalAlignment="Right" VerticalAlignment="Top">
+            <ToggleButton Content="Toggle" Width="120" Height="50"/>
+        </Border>
+
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="28,28,0,0" VerticalAlignment="Top"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="28,65,0,0" VerticalAlignment="Top" GroupName="1"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="28,85,0,0" VerticalAlignment="Top" GroupName="1"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="28,105,0,0" VerticalAlignment="Top" GroupName="1"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="28,125,0,0" VerticalAlignment="Top" GroupName="1"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="28,145,0,0" VerticalAlignment="Top" GroupName="1"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="141,65,0,0" VerticalAlignment="Top" GroupName="2"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="141,85,0,0" VerticalAlignment="Top" GroupName="2"/>
+        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="141,105,0,0" VerticalAlignment="Top" GroupName="2"/>
+        <Button HorizontalAlignment="Right" Margin="0,120,300,0" VerticalAlignment="Top" Width="160" Height="105">
+            <CheckBox Content="Check Button"/>
+        </Button>
+        <ScrollViewer Height="244" Margin="28,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="199" HorizontalScrollBarVisibility="Visible">
+            <MediaElement Source="cat.wmv" Stretch="Uniform"/>
+        </ScrollViewer>-->
+
+        
+        <!--<Viewbox Height="250" Width="300" Stretch="Uniform">
+            <MediaElement Source="cat.wmv" Stretch="None"/>
+        </Viewbox>-->
+        <Grid Height="60" Width="100" Background="LightBlue">
+            <Viewbox Stretch="Fill">
+                <Button Content="Click"/>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Window>

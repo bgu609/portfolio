@@ -1,0 +1,57 @@
+﻿<mah:MetroWindow x:Class="MVVMChartApp.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:MVVMChartApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <mah:MetroWindow.IconTemplate>
+        <DataTemplate>
+            <iconPacks:PackIconMaterial Kind="ChartAreaspline" Margin="5, 7, 0, 0"
+                                        Foreground="White"/>
+        </DataTemplate>
+    </mah:MetroWindow.IconTemplate>
+    
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <StackPanel>
+                <Menu IsMainMenu="True">
+                    <MenuItem Header="_Chart">
+                        <MenuItem.Icon>
+                            <iconPacks:PackIconMaterial Kind="ChartLine"/>
+                        </MenuItem.Icon>
+                        <MenuItem x:Name="Load_LineChart" Header="Line Chart">
+                            <MenuItem.Icon>
+                                <iconPacks:PackIconMaterial Kind="ChartBellCurveCumulative"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Pie Chart">
+                            <MenuItem.Icon>
+                                <iconPacks:PackIconTypicons Kind="ChartPieOutline"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="Load_GaugeChart" Header="Gauge Chart">
+                            <MenuItem.Icon>
+                                <iconPacks:PackIconTypicons Kind="ChartPieOutline"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem x:Name="ExitProgram" Header="Exit">
+                            <MenuItem.Icon>
+                                <iconPacks:PackIconMaterial Kind="ExitRun"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="_LiveChart"></MenuItem>
+                </Menu>
+            </StackPanel>
+        </Grid>
+        <Grid Background="WhiteSmoke">
+            <mah:ContentControlEx x:Name="ActiveItem"/>
+        </Grid>
+    </DockPanel>
+</mah:MetroWindow>

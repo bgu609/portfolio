@@ -37,16 +37,21 @@ track_width = 300
 track_nx = (width - track_width)/2
 track_px = (width + track_width)/2
 #
+# readline = []
+# de_content = '0'
 
-de_content = '0'
 count = 0
 classify = 0
 
 while True:
-    if s_val.in_waiting != 0:
-        content = s_val.readline()
-        de_content = content.decode('utf-8').split('\r')[0]
-        print(de_content, "type : {0}".format(type(de_content)))
+    content_read = 0
+    # if (content_read == 0) and (s_val.readable()):
+    #     for ch in s_val.read():
+    #         readline.append(chr(ch))
+    #         if chr(ch) == '\r':
+    #             print(readline)
+    #             readline.clear()
+    #             break
 
     ret, img_color = cam.read() # 카메라로부터 이미지 획득
     #img_color = cv2.flip(img_color, 0) # 상하반전
@@ -82,6 +87,8 @@ while True:
                 x,y,w,h = cv2.boundingRect(cnt) # contour에 사각형 boundary 형성
 
                 if x>(track_nx) and (x+w)<(track_px): # boundary가 중간 영역 내부에 있는 경우만 선택
+                    content_read = 1
+
                     img_color = cv2.rectangle(img_color, (x,y), (x+w,y+h), (0,0,255), 2)
                     print("Collect Group : ", size, x, y, w, h)
                     #setLabel(img_color, "{}".format(size), shape)
@@ -99,34 +106,49 @@ while True:
                     setLabel(img_color, app_size, shape)
                     setLabel(threshold, app_size, size)
                     cv2.drawContours(img_color, approx, -1, (255, 0, 0), 10) # 간소화된 contour 표시
+
+                    classify += app_size
+                    count += 1
+                    print(count)
+
+                    if count == 30:
+                        avg = classify / count
+                        r_avg = round(avg)
+                        print("avg : ", r_avg, " type : {0}".format(type(r_avg)))
+                    
+                        if r_avg == 3:
+                            r_shape = "triangle"
+                        elif r_avg == 4:
+                            r_shape = "rectangle"
+                        else:
+                            r_shape = "other"
+                        print(r_shape)
+
+                        classify = 0
+                        count = 0
+                        content_read = 0
+
+                        sig = 'F'
+                        s_val.write(sig.encode("utf-8"))
+    
+    if content_read == 0:
+        classify = 0
+        count = 0
     ###################################################
 
     # 트레일러 영역 표시
     cv2.line(img_color, (int(track_nx), 0), (int(track_nx), height), (0, 255, 0), 2)
     cv2.line(img_color, (int(track_px), 0), (int(track_px), height), (0, 255, 0), 2)
 
+    # b = img_color.item(int(height/2), int(width/2), 0)
+    # g = img_color.item(int(height/2), int(width/2), 1)
+    # r = img_color.item(int(height/2), int(width/2), 2)
+
+    # print("center({3}, {4}) color : ({0}, {1}, {2})".format(r, g, b, width/2, height/2))
+
+    cv2.namedWindow("img_color", cv2.WINDOW_NORMAL)
     cv2.imshow("img_color", img_color)
     cv2.imshow("threshold", threshold)
-
-    if de_content == '11':
-        classify += app_size
-        count += 1
-    else:#elif de_content == '0':
-        if count != 0:
-            avg = classify / count
-            r_avg = round(avg)
-            print("avg : ", r_avg, " type : {0}".format(type(r_avg)))
-        
-            if r_avg == 3:
-                r_shape = "triangle"
-            elif r_avg == 4:
-                r_shape = "rectangle"
-            else:
-                r_shape = "other"
-            print(r_shape)
-
-        classify = 0
-        count = 0
 
     k = cv2.waitKey(10) & 0xff # Press 'ESC' for exiting video
     if k == 27:

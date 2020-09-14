@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArduinoMornitoring.Properties
+namespace ArduinoMonitoringWinFormApp.Properties
 {
 
 
